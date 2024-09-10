@@ -471,16 +471,206 @@
 //  console.log(x);
 // }
 
-function outerFunction(outerVariable) {
-    return function innerFunction(innerVariable) {
-      console.log('Outer Variable:', outerVariable);
-      console.log('Inner Variable:', innerVariable);
-    };
- }
+// function outerFunction(outerVariable) {
+//     return function innerFunction(innerVariable) {
+//       console.log('Outer Variable:', outerVariable);
+//       console.log('Inner Variable:', innerVariable);
+//     };
+//  }
   
-  const newFunction = outerFunction('outside');
-  newFunction('inside');
-  console.log(newFunction);
+//   const newFunction = outerFunction('outside');
+//   newFunction('inside');
+//   console.log(newFunction);
   
 
+  // console.log("Start");  
+  // setTimeout(function() {
+  //   console.log("callback");  
+  // }, 2000);
+  // console.log("End");  
+
+
+  // higher oder function in javacript
+
+
+  // function higherOder(fn) {
+  //   (fn);
+  // }
+
+  // higherOder(function() {
+  //   console.log("higher order funtion");
+  // });
+
+
+  // call hell funtion and example
+//   function firstOrder(callback) {
+//     setTimeout(() => {
+//         console.log('First operation');
+//         callback();
+//     }, 1000);
+// }
+
+// function callbackFunction() {
+//     console.log('Callback');
+// }
+// firstOrder(callbackFunction);
+
+  
+   // call hell funtion
+  // firstOperation(() => {
+  //   secondOperation(() => {
+  //     thirdOperation(() => {
+  //       console.log('All operations complete');
+  //     });
+  //   });
+  // });
+
+
+
+  // what is promiss
+//promiss1
+
+// const promisOne = new Promise(function(resolve,reject) {
+//   setTimeout(function(){
+//    console.log("namaste javascript");
+//    resolve();
+//   },1000);
+// })
+// promisOne.then(function() {
+//   console.log("promis consume");
+// })
+
+// promise2
+// new Promise(function(resolve, reject) {
+//   setTimeout(function() {
+//     console.log("namaste javascript");
+//     resolve();
+//   },0);
+// }).then(function() {
+//   console.log("promise consumed");
+// });
+
+// promis tree
+// const promisthird = new Promise(function(resolve,reject){
+//   setTimeout(() => {
+//     console.log({Username:"karishma"});
+//   }, 0);
+// });
+// promisthird.then(function(user){
+//   console.log(user);
+// });
+
+// promise four
+// const promisefour = new Promise(function(resolve, reject) {
+//   let error = false; 
+//   setTimeout(function() {
+//     if (!error) {
+//       resolve({ Username: "karishma", Password: "2" });
+//     } else {
+//       reject(new Error("something went wrong"));
+//     }
+//   }, 1000);
+// });
+
+// promisefour
+//   .then(function(user) {
+//     console.log(user);
+//     return user.Username; 
+//   })
+//   .then(function(password) {
+//     console.log(password); 
+//     return "password.Password; 
+//   })
+//   .then(function(passwordInfo) {
+//     console.log(passwordInfo);
+//   })
+//   .catch(function(error) {
+//     console.log(error.message); 
+//   });
+
+
+
+// promise APIs
+// const p1 = new Promise((resolve,reject)=> {
+//   setTimeout(() => resolve("p1 succes"),3000);
+// });
+// const p2 = new Promise((resolve,reject)=> {
+//  // setTimeout(() => resolve("p2 succes"),3000);
+//   setTimeout(() => resolve("p2 fail"),2000);
+// });
+// const p3 = new Promise((resolve,reject)=> {
+//   setTimeout(() => resolve("p3 succes"),1000);
+// });
+
+// Promise.all([p1,p2,p3]) 
+// .then((res) => {
+//  console.log(res);
+// })
+// .catch((err) => {
+//   console.log(err);
+// });
+
+
+
+// const p1 = new Promise((resolve,reject)=> {
+//   setTimeout(() => resolve("p1 succes"),3000);
+// });
+// const p2 = new Promise((resolve,reject)=> {
+// //  setTimeout(() => resolve("p2 succes"),3000);
+   
+// });
+// const p3 = new Promise((resolve,reject)=> {
+//   // setTimeout(() => resolve("p3 succes"),1000);
+//   setTimeout(() => resolve("p2 fail"),5000);
+// });
+
+// Promise.race([p1,p2,p3]) 
+// .then((res) => {
+//  console.log(res);
+// })
+// .catch((err) => {
+//   console.log(err);
+// });
+
+// const p1 = new Promise((resolve,reject)=> {
+//   setTimeout(() => resolve("p1 succes"),3000);
+// });
+// const p2 = new Promise((resolve,reject)=> {
+//  setTimeout(() => resolve("p2 succes"),3000);
+   
+// });
+// const p3 = new Promise((resolve,reject)=> {
+//   // setTimeout(() => resolve("p3 succes"),1000);
+//   setTimeout(() => reject("p2 fail"),5000);
+// });
+
+// Promise.allSettled([p1,p2,p3]) 
+// .then((res) => {
+//  console.log(res);
+// })
+// .catch((err) => {
+//   console.log(err);
+// });
+
+
+const p1 = new Promise((resolve,reject)=> {
+    // setTimeout(() => resolve("p1 succes"),3000);
+    setTimeout(() => reject("p2 fail"),5000);
+  });
+  const p2 = new Promise((resolve,reject)=> {
+  //  setTimeout(() => resolve("p2 succes"),1000);
+  setTimeout(() => reject("p2 fail"),5000);
+  });
+  const p3 = new Promise((resolve,reject)=> {
+    // setTimeout(() => resolve("p3 succes"),1000);
+    setTimeout(() => reject("p2 fail"),5000);
+  });
+  
+  Promise.any([p1,p2,p3]) 
+  .then((res) => {
+   console.log(res);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 
