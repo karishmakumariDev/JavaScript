@@ -28,7 +28,7 @@ input {
 button {
     width: 100%;
     padding: 10px;
-    background-color: #ff4b5c;
+    background-color: green;
     border: none;
     color: white;
     cursor: pointer;
@@ -46,3 +46,6 @@ li {
 }
 
 
+h1 {
+    color: red;
+}
