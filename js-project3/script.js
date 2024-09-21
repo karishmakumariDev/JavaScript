@@ -1,15 +1,15 @@
-
 const nameInput = document.getElementById('nameInput');
 const button = document.getElementById('red-button');
 const userDetail = document.getElementById('userDetail');
 const message = document.getElementById('message'); 
+const submitButton = document.getElementById('submitButton'); 
 
 let users = [
-    { name: "Manish", age: 28, email: "Manish@example.com", RollNo: "123" },
-    { name: "Bikash", age: 24, email: "Bikash@example.com", RollNo: "456" },
-    { name: "Karishma", age: 20, email: "Karishma@example.com", RollNo: "789" }
+    { name: "Manish", age: 28, email: "Manish@example.com", RollNo: "1" },
+    { name: "Bikash", age: 24, email: "Bikash@example.com", RollNo: "2" },
+    { name: "Karishma", age: 20, email: "Karishma@example.com", RollNo: "3" }
 ];
-
+console.log(users);
 let prvSearchInput = '';
 
 button.addEventListener('click', () => {
@@ -24,7 +24,7 @@ button.addEventListener('click', () => {
     prvSearchInput = name;
     let searchVal = null;
     userDetail.innerHTML = "";
-    message.innerHTML = ""; 
+    
 
     users.forEach((obj) => {
         if (obj.name.toLowerCase() === name) {
@@ -58,11 +58,37 @@ button.addEventListener('click', () => {
 
 nameInput.addEventListener('keyup', () => {
     let currentInput = nameInput.value.toLowerCase();
-    message.innerHTML = ""; 
+    
 
     if (prvSearchInput === currentInput) {
         button.style.backgroundColor = 'red';
-    }else {
+    } else {
         button.style.backgroundColor = 'green';
     }
 });
+
+submitButton.addEventListener('click', () => {
+    const name = document.getElementById('name').value;
+    const age = document.getElementById('age').value;
+    const email = document.getElementById('email').value;
+    const roll = document.getElementById('roll').value;
+
+    if (name && age && email && roll) {
+        users.push({
+            name: name,
+            age: age,
+            email: email,
+            RollNo: roll 
+        });
+        console.log(users);
+        alert('Submission is successful');
+    } else {
+        alert('Submission is not successful');
+    }
+
+    document.getElementById('name').value = "";
+    document.getElementById('age').value = "";
+    document.getElementById('email').value = "";
+    document.getElementById('roll').value = "";
+});
+
