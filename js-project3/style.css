@@ -5,6 +5,12 @@ body {
     padding: 0;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .container {
     max-width: 500px;
     margin: 50px auto;
@@ -33,6 +39,13 @@ button {
     color: white;
     cursor: pointer;
 }
+.botton {
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 
 ul {
     list-style: none;
@@ -68,4 +81,14 @@ h1 {
 h1{
     text-align: center;
     color: #333;
+}
+
+.errormessage {
+    font-size: 14px;
+    color: red;
+    display: none;
+}
+
+#submitButton {
+    background-color: red;
 }
