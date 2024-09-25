@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(245, 225, 211);
+    text-align: center;
+    margin: 0;
+  }
+
+  .container {
+    background-color: #84d098;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+}
+  
+  h1 {
+    font-size: 3rem;
+    margin-top: 2rem;
+  }
+
+  
+button {
+    background-color: #45a049;
+    color: white;
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+
+button:hover {
+    background-color: #257a29;
+}
+.rollhis {
+    display: block;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 33%;
+}
+#roll-history {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    flex-direction: column;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    max-width: 600px;
+    margin-top: 10px;
+  }
+li {
+    font-size: 1.5rem;
+    padding: 10px;
+    margin: 0.5rem;
+    background-color: #e4bfad;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+  li span {
+    font-size: 3rem;
+    margin-right: 1rem;
+  }
+
+  .dice {
+    font-size: 7rem;
+    margin: 5px;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+  }
+  
+  .rolling {
+    animation-name: roll;
+  }
+@keyframes roll {
+    0% {
+      transform: rotateX(0deg);
+    }
+    50% {
+        transform: rotateX(180deg); 
+    }
+    70% {
+        transform: rotateX(280deg);   
+    }
+    100% {
+      transform:  rotateX(360deg);
+    }
+  }
