@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    justify-content: center;  
+    align-items: center; 
+    flex-direction: column; 
+    gap: 40px;   
+    height: 100vh;            
+    margin: 0;
+    background-color: rgb(139, 202, 181);
+}
+
+#Name:hover {
+    cursor: pointer;
+}
+#Age:hover {
+    cursor: pointer;
+}
+#Roll:hover {
+    cursor: pointer;
+}
+
+
+table {
+    border-collapse: collapse;
+    width: 60%;
+    text-align: left;
+}
+
+
+th, td {
+    padding: 8px;
+    border: 1px solid black;
+}
+
+h1 {
+    text-align: center;
+}
+
+#search{
+    width: 20%;
+   padding: 10px;
+}
