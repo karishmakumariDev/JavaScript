@@ -14,6 +14,7 @@ body {
     width: 100vw;
     position: relative;
     background-color: black;
+    /* z-index: 2; */
 }
 
 video {
@@ -89,4 +90,50 @@ video {
     100% {
         transform: scale(1.2);
     }
+}
+.timer-container{
+    color: greenyellow;
+}
+
+.filter-container {
+    position: absolute;
+    top: calc((100vh - 16rem)/2);
+    left: 5rem;
+    height: 16rem;
+    width: 5rem;
+    background-color: aqua;
+    z-index: 2;
+}
+
+.filter {
+    /* width: 4rem; */
+    height: 4rem; 
+    background-image: url("https://picsum.photos/200/300?grayscale");
+    background-position: center;
+    background-size: 100% 100%; /* or use 'cover' for proportional scaling */
+    background-repeat: no-repeat;
+    background-blend-mode: multiply; /* Example mode */
+    background-color:rgba(197, 160, 108, 0.453)
+}
+.orange{
+    background-color:rgba(197, 160, 108, 0.453)  
+}
+.brown{
+    background-color:rgba(146, 68, 68, 0.453)
+}
+.pink{
+    background-color:rgba(140, 51, 154, 0.453)   
+}
+
+.transparent {
+    background-color:rgba(117, 157, 225, 0.453) 
+}
+
+.filter-layer {
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    /* background-color: rgba(121, 80, 65, 0.657); */
+    z-index: 1;
 }
